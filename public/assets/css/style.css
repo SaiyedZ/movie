@@ -1,0 +1,196 @@
+/* Global Reset and Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+/* Container */
+.container {
+  max-width: 1400px !important;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Button Styles */
+.btn-blue {
+  background-color: #ff7043 !important; /* Warm orange */
+  border-color: #ff7043;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-blue:hover {
+  background-color: #e64a19 !important; /* Darker orange */
+  transform: translateY(-2px);
+}
+
+/* Navbar Links */
+.nav-link {
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #ff7043 !important; /* Warm orange */
+}
+
+/* Form Border */
+.border-blue {
+  border-color: #ff7043 !important;
+  color: #ff7043 !important;
+}
+
+/* Intro Section (Carousel) */
+.intro-section {
+  position: relative;
+  height: 85vh;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.intro-section img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* Data Cards Section */
+.data-cards {
+  margin-top: 2rem;
+}
+
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Card Styling */
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 3/4;
+  perspective: 1000px;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: transform 0.8s ease;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+.card-back {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(-180deg);
+  color: white;
+  opacity: 0.9;
+}
+
+.card:hover .card-front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+/* Card Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.delete, .edit {
+  color: #b3b3b3;
+  transition: color 0.3s;
+}
+
+.delete:hover, .edit:hover {
+  color: #ff7043; /* Warm orange */
+}
+
+/* Modal Styling */
+.modal-content {
+  background-color: #2a2a2a;
+  color: #f5f5f5;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+  border-bottom: 1px solid #444;
+}
+
+.modal-title {
+  color: #ff7043; /* Warm orange */
+  font-weight: bold;
+}
+
+.form-control,
+.form-select {
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+  color: #f5f5f5;
+  border-radius: 0.5rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #ff7043; /* Warm orange */
+  box-shadow: 0 0 8px rgba(255, 112, 67, 0.5);
+}
+
+.btn-close {
+  filter: invert(100%);
+  opacity: 0.8;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .intro-section {
+      height: 50vh;
+  }
+
+  .card-wrapper {
+      grid-template-columns: 1fr;
+  }
+
+  .controls {
+      font-size: 1rem;
+  }
+}
